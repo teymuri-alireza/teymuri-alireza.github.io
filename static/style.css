@@ -101,7 +101,7 @@ header p, header a {
 }
 .page-breaker {
     float: inline-start;
-    width: 300px;
+    width: 80%;
     height: 2px;
     background-color: rgb(150, 150, 150);
     border: none;
@@ -124,4 +124,27 @@ footer {
 footer a , footer p {
     text-decoration: none;
     color: rgb(160, 160, 160);
+}
+
+@media screen and (max-width: 700px) {
+    #greeting h2{
+        font-size: 2rem;
+        padding-bottom: 4%;
+    }
+    .info {
+        font-size: 18px;
+    }
+    .info .project-link {
+        font-size: 20px;
+    }
+    .info .project-p {
+        font-size: 16px;
+        padding-top: 15px;
+    }
+    #role {
+        font-size: 16px;
+    }
+    .json {
+        padding-bottom: 4%;
+    }
 }
