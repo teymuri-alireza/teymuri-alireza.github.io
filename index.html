@@ -3,93 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
     <link rel="stylesheet" href="./static/style.css">
+    <title>Home</title>
 </head>
 <body>
-    <header>
-        <p>connect with me</p>
-        <a href="https://github.com/gitsuko" target="_blank">
-            <img src="./images/github-mark-white.svg" class="github-logo" alt="github logo" />
-        </a>
-        <p class="nav-2">|</p>
-        <p class="nav-2 nav-2-p" onclick="homePage()">Home</p>
-        <p class="nav-2 nav-2-p" onclick="projectPage()">Projects</p>
-    </header>
-    <div id="home-area" class="section active">
-        <div id="greeting">
-            <h2>Hey There!</h2>
-            <p class="info">
-                I'm Alireza Teymuri, 
-                a computer engineering student passionate about creating and experimenting with technology.
-                I enjoy creating websites, developing desktop apps, exploring Linux, and of course, drinking coffee.
-            </p>
-            <br>
-            <br>
-            <p class="info json curly-brackets">{</p>
-                <p class="info json">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="json-key">"Region"</span>: <span class="json-value">"Iran</span>",
-                </p>
-                <p class="info json">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="json-key">"favoriteDrink"</span>: <span class="json-value">"Coffee</span>",
-                </p>
-                <p class="info json">&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="json-key">"favoritePlace"</span>: <span class="json-value">"/bin/bash</span>"
-                </p>
-            <p class="info json curly-brackets">}</p>
-        </div>
-        <p class="role" id="role"></p>
-    </div>
-    
-    <div id="project-area" class="section">
-        <div class="project-section">
-            <h2>My Projects!</h2>
-            <hr class="page-breaker">
-            <br>
+    <main>
+        <div class="main-div">
             <div class="info">
-                <div>
-                    <h3>
-                        <a class="project-link" href="https://github.com/gitsuko/port-xray" target="_blank">port-xray</a>
-                    </h3>
-                    <p class="project-p">
-                        A Python CLI port scanner supporting single and multiple port scans,
-                        including service version grabbing.
-                    </p>
+                <h1>Alireza Teymuri</h1>
+                <p>
+                    A computer engineering student passionate about creating and experimenting with technology.
+                    I enjoy creating websites, developing desktop apps, exploring Linux, and of course, drinking coffee.
+                </p>
+                <div class="contact">
+                    <p>connect with me</p>
+                    <a class="contact-a" href="https://github.com/gitsuko" target="_blank">
+                        <img class="contact-img" src="./img/github-mark-white.svg" />
+                    </a>
+                    <a class="contact-a" href="https://x.com/gitsuko_" target="_blank">
+                        <img class="contact-img" src="./img/icons8-x-50.png" />
+                    </a>
+                    <a class="contact-a" href="mailto:teymuri.alireza98@gmail.com" target="_blank">
+                        <img class="contact-img" src="./img/icons8-email-50.png" />
+                    </a>
                 </div>
             </div>
-            <hr class="page-breaker">
-            <br>
-            <div class="info">
-                <div>
-                    <h3>
-                        <a class="project-link" href="https://github.com/gitsuko/NetDesk" target="_blank">NetDesk</a>
-                    </h3>
-                    <p class="project-p">
-                        NetDesk is a Python-based socket communication tool that supports multiple clients and real-time message exchange.
-                        It includes Tkinter-based GUI for the client.
-                    </p>
+            <hr class="vertical-hr">
+            <div class="section-2">
+                <h1>Projects</h1>
+                <hr class="normal-hr">
+                <div class="projects">
+                    <h2><a href="https://github.com/gitsuko/port-xray" target="_blank">port-xray</a></h2>
+                    <p>A Python CLI port scanner supporting single and multiple port scans, including service version grabbing.</p>
                 </div>
-            </div>
-            <hr class="page-breaker">
-            <br>
-            <div class="info">
-                <div>
-                    <h3>
-                        <a class="project-link" href="https://github.com/gitsuko/MetadataScanner" target="_blank">Metadata Scanner</a>
-                    </h3>
-                    <p class="project-p">
-                        A simple metadata scanner written in c++ including both CLI and Qt GUI.
-                    </p>
+                <div class="projects">
+                    <h2><a href="https://github.com/gitsuko/MetadataScanner" target="_blank">Metadata Scanner</a></h2>
+                    <p>A simple metadata scanner written in c++ including both CLI and Qt GUI</p>
+                </div>
+                <div class="projects">
+                    <h2><a href="https://github.com/gitsuko/NetDesk" target="_blank">NetDesk</a></h2>
+                    <p>A Python-based multi-client socket communication tool featuring a Tkinter GUI.</p>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <p>
-            Icons by 
-            <a class="cursor-icon" target="_blank" href="https://icons8.com">icons8.com</a>
-        </p>
+    </main>
+    <footer class="footer">
+        <p class="footer-txt">icons by icons.com</p>
     </footer>
 </body>
 <script src="./static/app.js"></script>
