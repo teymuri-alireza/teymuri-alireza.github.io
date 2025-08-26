@@ -98,4 +98,8 @@ main p {
     .footer {
         position: relative;
     }
+    .section-2 {
+        margin-left: 5%;
+        width: 85%;
+    }
 }
