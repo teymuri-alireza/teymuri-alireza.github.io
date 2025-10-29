@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./static/style.css">
     <link rel="shortcut icon" href="./img/icons8-curly-brackets-16.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Home</title>
 </head>
 <body>
@@ -28,16 +27,66 @@
                 </a>
             </div>
             <hr class="profile-skills-hr" />
-            <div class="skills-div">
+            <section class="skills skills-div" aria-label="Skill levels">
                 <h2>Skills</h2>
-                <p><li>ASP.NET Core</li></p>
-                <p><li>Python</li></p>
-                <p><li>SQL</li></p>
-            </div>
+
+                <div class="skill" data-percent="30">
+                    <div class="skill_label">
+                    <span>ASP.NET Core</span><span class="skill_percent" aria-hidden="true">30%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-percent="65">
+                    <div class="skill_label">
+                    <span>Python</span><span class="skill_percent" aria-hidden="true">65%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-percent="60">
+                    <div class="skill_label">
+                    <span>Microsoft SQL Server</span><span class="skill_percent" aria-hidden="true">60%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+                <div class="skill" data-percent="60">
+                    <div class="skill_label">
+                    <span>PostgreSQL</span><span class="skill_percent" aria-hidden="true">60%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-percent="50">
+                    <div class="skill_label">
+                    <span>Ubuntu Linux</span><span class="skill_percent" aria-hidden="true">50%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+
+                <div class="skill" data-percent="35">
+                    <div class="skill_label">
+                    <span>Network</span><span class="skill_percent" aria-hidden="true">35%</span>
+                    </div>
+                    <div class="skill_track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" tabindex="0">
+                    <div class="skill_fill"></div>
+                    </div>
+                </div>
+            </section>
+
         </div>
         <div class="description-div"></div>
       </main>
 </body>
 <script src="./static/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
