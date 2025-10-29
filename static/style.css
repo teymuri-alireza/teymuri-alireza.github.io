@@ -8,6 +8,7 @@ body {
     /* background-color: rgb(43, 43, 43); */
     background-image: linear-gradient(to left, rgb(43, 43, 43), #000000);
     width: 450px;
+    min-height: 100vh;
     padding-top: 100px;
     text-align: center;
 }
