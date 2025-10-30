@@ -110,5 +110,20 @@ main {
 }
 
 @media screen and (max-width:800px) {
-
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+    body {
+        overflow: scroll;
+    }
+    .profile-div {
+        min-width: 100%;
+    }
+    .description-div {
+        padding: 0 75px;
+    }
+    .skills {
+        max-width: none;
+    }
 }
