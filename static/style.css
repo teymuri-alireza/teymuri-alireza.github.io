@@ -1,8 +1,39 @@
 body {
-    /* cursor: url("../img/icons8-select-cursor-24.png") 0 0, auto; */
+    cursor: url("../img/icons8-select-cursor-24.png") 0 0, auto;
     margin: 0;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    filter: blur(6px);
+    opacity: 80%;
+    /* transform: scale(1.05); */
+    z-index: -1;
 }
 main {
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
+}
+main h1 {
+    text-align: center;
+    font-size: 2.4em;
+}
+main p {
+    font-size: 1.4em;
+    text-indent: 28px;
+    text-align: justify;
+    letter-spacing: 0.5px;;
+}
+.about-me {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
 }
