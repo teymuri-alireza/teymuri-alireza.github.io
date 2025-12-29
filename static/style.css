@@ -15,19 +15,20 @@ main {
     box-sizing: border-box;
     padding: 20px;
 }
+
 .hr-line {
     border: none;
     height: 1px;
     background-color: hsl(210deg 8% 50%);
-    /* margin-top: 10px;
-    margin-bottom: 10px; */
 }
+
 .child {
     /* display: grid; */
     border: 2px solid hsl(210deg 8% 50%);
     border-radius: 4px;
     padding: 15px;
 }
+
 .links {
     display: flex;
     flex-direction: column;
@@ -47,7 +48,33 @@ main {
         background-color: hsl(210deg 8% 30%);
         letter-spacing: 5px;
     }
+
+    & a {
+        color: #E3E6E8;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        padding-bottom: 2px;
+        text-align: center;
+        padding: 8px 12px;
+    }
+    & a::after {
+        content: "";
+        position: absolute;
+        left: 8%;
+        bottom: 0;
+        height: 1px;
+        width: 84%;
+        background: currentColor;
+        transform-origin: center center;
+        transform: scaleX(1);
+        transition: transform 300ms ease-in-out;
+    }
+    & a:hover::after {
+        transform: scaleX(0);
+    }
 }
+
 .desc-content {
     text-indent: 50px;
     line-height: 1.6;
@@ -58,6 +85,7 @@ main {
 .desc-content p {
     margin-bottom: -15px;
 }
+
 .social-media {
     position: fixed;
     left: 50%;
@@ -76,7 +104,6 @@ main {
     height: 30px;
     transition: transform 0.3s ease;
 }
-
 .social-media img:hover {
     transform: scale(1.2);
 }
