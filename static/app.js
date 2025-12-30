@@ -3,8 +3,13 @@ let projects = document.getElementById("content-projects");
 projects.style.transition = "opacity 0.3s ease";
 intro.style.transition = "opacity 0.3s ease";
 
+let introBtn = document.getElementById("introBtn");
+let projectsBtn = document.getElementById("projectsBtn");
+
 function showIntro() {
     projects.style.opacity = "0";
+    projectsBtn.style.background = "none";
+    introBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
     setTimeout(() => {
         intro.style.opacity = "1";
     }, 150);
@@ -12,6 +17,8 @@ function showIntro() {
 
 function showProjects() {
     intro.style.opacity = "0";
+    introBtn.style.background = "none";
+    projectsBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
     setTimeout(() => {
         projects.style.opacity = "1";
     }, 150);
