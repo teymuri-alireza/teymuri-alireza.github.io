@@ -8,6 +8,8 @@ let projectsBtn = document.getElementById("projectsBtn");
 
 function showIntro() {
     projects.style.opacity = "0";
+    projects.style.display = "none";
+    intro.style.display = "block";
     projectsBtn.style.background = "none";
     introBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
     setTimeout(() => {
@@ -17,6 +19,8 @@ function showIntro() {
 
 function showProjects() {
     intro.style.opacity = "0";
+    intro.style.display = "none";
+    projects.style.display = "block";
     introBtn.style.background = "none";
     projectsBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
     setTimeout(() => {
