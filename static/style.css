@@ -164,3 +164,43 @@ main {
 .social-media img:hover {
     transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 10px;
+    }
+    
+    .child {
+        max-height: none;
+    }
+    
+    .intro {
+        text-indent: 25px;
+        font-size: 1.1em;
+    }
+    
+    .projects p {
+        text-indent: 25px;
+        font-size: 1em;
+    }
+    
+    .certifications {
+        font-size: 1.1em;
+    }
+
+    .social-media {
+        position: relative;
+        margin-top: 8px;
+        bottom: 10px;
+        padding: 6px 10px;
+        gap: 8px;
+        justify-content: center;
+    }
+    
+    .social-media img {
+        width: 24px;
+        height: 24px;
+    }
+}
