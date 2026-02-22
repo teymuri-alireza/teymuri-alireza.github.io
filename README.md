@@ -2,7 +2,7 @@
 
 I've created a interactive terminal interface with javascript for this repo.
 
-check it out: [teymuri-alireza.github.io](teymuri-alireza.github.io)
+check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
 ## supported commands
 
