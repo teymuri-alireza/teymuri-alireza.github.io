@@ -1,206 +1,25 @@
-body {
-    cursor: url("../img/icons8-select-cursor-24.png") 0 0, auto;
-    margin: 0;
-    background: hsl(216, 16%, 6%);
-    background-image: url(../img/vecteezy_textured-grunge-design-distressed-black-noise-paper_medium.webp);
-    color: #E3E6E8;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Times New Roman', Times, serif;
+::selection {
+    background-color: #00ff9c;
+    color: #000000;
 }
-main {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    min-height: 89vh;
-    gap: 10px;
-    box-sizing: border-box;
+* {
+    font-size: 15px;
+}
+body {
+    background: #000000;
+    color: #00ff9c;
+    font-family: monospace;
+}
+
+#terminal {
     padding: 20px;
 }
 
-.hr-line {
+input {
+    background: #000000;
     border: none;
-    height: 1px;
-    background-color: hsl(210deg 8% 50%);
-}
-
-.child {
-    background: hsl(216, 16%, 6%);
-    border-radius: 4px;
-    padding: 15px;
-    max-height: 75vh;
-    overflow: auto;
-    /* From https://css.glass */
-    background: rgba(38, 40, 43, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.5px);
-    -webkit-backdrop-filter: blur(11.5px);
-    border: 1px solid rgba(38, 40, 43, 1);
-    border: 2px solid hsl(210deg 8% 50%);
-}
-
-.links {
-    display: grid;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-    min-width: 0;
-    overflow-wrap: break-word;
-
-    & button {
-        background: none;
-        border: 1px solid hsl(210deg 8% 50%);
-        color: #E3E6E8;
-        padding: 8px 12px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, letter-spacing 0.3s ease;
-    }
-    & button:hover {
-        /* background-color: hsl(210deg 8% 30%); */
-        letter-spacing: 5px;
-    }
-
-    & a {
-        color: #E3E6E8;
-        position: relative;
-        display: inline-block;
-        text-decoration: none;
-        padding-bottom: 2px;
-        text-align: center;
-        padding: 8px 12px;
-    }
-    & a::after {
-        content: "";
-        position: absolute;
-        left: 8%;
-        bottom: 0;
-        height: 1px;
-        width: 84%;
-        background: currentColor;
-        transform-origin: center center;
-        transform: scaleX(1);
-        transition: transform 300ms ease-in-out;
-    }
-    & a:hover::after {
-        transform: scaleX(0);
-    }
-}
-
-.thanks {
-    display: grid;
-    margin-top: 35px;
-}
-.thanks a {
-    text-decoration: none;
-}
-
-.grey-text {
-    color: hsl(231, 10%, 74%);
-}
-
-.intro {
-    text-indent: 50px;
-    line-height: 1.6;
-    font-size: 1.3em;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.intro p {
-    margin-bottom: -15px;
-}
-
-.certifications {
-    font-size: 1.3em;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.certifications li {
-    margin-top: -10px;
-}
-.certification-links {
-    color: #E3E6E8;
-}
-
-.projects {
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.projects p {
-    text-indent: 50px;
-    font-size: 1.1em;
-}
-.projects a {
-    color: #E3E6E8;
-}
-
-.social-media {
-    /* From https://css.glass */
-    background: rgba(38, 40, 43, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.5px);
-    -webkit-backdrop-filter: blur(11.5px);
-    border: 1px solid rgba(38, 40, 43, 1);
-    position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding: 8px 12px;
-    border-radius: 999px;
-    border: 1px solid hsl(210deg 8% 50%);
-    z-index: 999;
-}
-.social-media img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-.social-media img:hover {
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding: 10px;
-    }
-    
-    .child {
-        max-height: none;
-    }
-    
-    .intro {
-        text-indent: 25px;
-        font-size: 1.1em;
-    }
-    
-    .projects p {
-        text-indent: 25px;
-        font-size: 1em;
-    }
-    
-    .certifications {
-        font-size: 1.1em;
-    }
-
-    .social-media {
-        position: relative;
-        margin-top: 8px;
-        bottom: 10px;
-        padding: 6px 10px;
-        gap: 8px;
-        justify-content: center;
-    }
-    
-    .social-media img {
-        width: 24px;
-        height: 24px;
-    }
+    color: #00ff9c;
+    outline: none;
+    font-family: monospace;
+    width: 90%;
 }

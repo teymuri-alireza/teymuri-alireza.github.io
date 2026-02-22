@@ -1,31 +1,76 @@
-let intro = document.getElementById("content-intro");
-let projects = document.getElementById("content-projects");
-projects.style.transition = "opacity 0.3s ease";
-intro.style.transition = "opacity 0.3s ease";
+const output = document.getElementById("output");
+const input = document.getElementById("cmd");
+let prompt = "> ";
 
-let introBtn = document.getElementById("introBtn");
-let projectsBtn = document.getElementById("projectsBtn");
+document.addEventListener("click", () => {
+    document.getElementById("cmd").focus();
+});
 
-function showIntro() {
-    projects.style.opacity = "0";
-    projects.style.display = "none";
-    intro.style.display = "block";
-    projectsBtn.style.background = "none";
-    introBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
-    setTimeout(() => {
-        intro.style.opacity = "1";
-    }, 150);
+input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        const value = input.value.trim();
+        printLine(prompt + value);
+
+        handleCommand(value);
+        input.value = "";
+    }
+});
+
+function handleCommand(text)
+{
+    const [command, ...args] = text.split(" ");
+
+    if (commands[command]) {
+        commands[command](args);
+    }
+    else {
+        if (text.split(" ") != "") {
+            printLine(text + ": command not found");
+        }
+    }
 }
 
-function showProjects() {
-    intro.style.opacity = "0";
-    intro.style.display = "none";
-    projects.style.display = "block";
-    introBtn.style.background = "none";
-    projectsBtn.style.backgroundColor = "hsl(216, 16%, 6%)";
-    setTimeout(() => {
-        projects.style.opacity = "1";
-    }, 150);
-}
+const commands = {
 
-document.addEventListener("DOMContentLoaded", showIntro());
+    help() {
+        printLine("Available commands: help, sudo, ls, whoami, pwd, man, clear");
+    },
+
+    sudo(args) {
+        if (!args[0]) {
+            printLine("Usage: sudo <command>")
+        }
+        else {
+            printLine("Permission denied: with little power comes little responsibility.");
+        }
+    },
+
+    ls() {
+        printLine(". .. index.html style.css app.js .git");
+    },
+
+    pwd() {
+        printLine("/home/you")
+    },
+
+    whoami() {
+        printLine("Hi. I'm Alireza Teymuri - a web developer based in Iran.");
+        printLine("I enjoy building back-end systems, solving CTF challenges and")
+        printLine("contributing to open-source projects on GitHub.")
+    },
+
+    man() {
+        printLine("No man pages. Figure it out like a real hacker :)");
+    },
+
+    clear() {
+        output.innerHTML = "";
+    },
+
+};
+
+function printLine(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    output.appendChild(div);
+}

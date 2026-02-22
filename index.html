@@ -8,88 +8,19 @@
     <title>Alireza Teymuri</title>
 </head>
 <body>
-    <header></header>
-    <main>
-        <div class="child">
-            <h1>Alireza Teymuri</h1>
-            <h3>Computer Engineering Student | ASP.NET Core Developer (Entry Level)</h3>
-            <hr class="hr-line"/>
-            <div class="links">
-                <button onclick="showIntro()" id="introBtn">Intro</button>
-                <button onclick="showProjects()" id="projectsBtn">Projects</button>
-                <a href="./resume/Alireza_Teymuri_CV.pdf" target="_blank">Download CV</a>
-            </div>
-            <div class="thanks">
-                <a class="grey-text" href="https://www.vecteezy.com/free-photos/black-noise" target="_blank">- Background by Vecteezy</a>
-                <br />
-                <a class="grey-text" href="https://css.glass" target="_blank">- The glass effect by css.glass</a>
-            </div>
-        </div>
-        <div class="child">
-            <div>
-                <div id="content-intro">
-                    <div class="intro">
-                        <p>Hello, I'm Alireza Teymuri - a web developer based in Iran.
-                        I enjoy building back-end systems, solving CTF challenges
-                        and contributing to open-source projects on GitHub. When I'm not coding,
-                        you'll probably find me playing chess.
-                        Coffee is my daily debugger, and Linux is my engine.</p>
+    <p>
+        Welcome<br />
+        Current version: 0.0.1
+    </p>
+    <div id="terminal">
+        <div id="output">
 
-                    </div>
-                    <hr class="hr-line"/>
-                    <div class="certifications">
-                        <h3>Certifications</h3>
-                        <ul>
-                            <li>
-                                <a class="certification-links" href="./certifications/certificate-en.pdf" target="_blank">
-                                    Network+</a>
-                            <span class="grey-text" style="margin-left: 5px;"> - Network plus and networking fundamentals</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="projects" id="content-projects">
-                    <div>
-                        <h2>coffee shop website (Sample) (work in progress)</h2>
-                        <p>This project is written using ASP.NET Core as a practice website.
-                        It includes features like user authentication, product management,
-                        and order processing. The front-end is built with Razor Pages
-                        and Bootstrap for responsive design. The database is managed using
-                        Entity Framework Core with a SQL Server backend.
-                        </p>
-                    </div>
-                    <hr class='hr-line' />
-                    <div>
-                        <h2>
-                            <a href="https://github.com/teymuri-alireza/plancli" target="_blank">plancli</a>
-                        </h2>
-                        <p>This project is written with C#. plancli is a command-line tool
-                        for managing and organizing tasks and projects. It allows users
-                        to create, update, and track tasks directly from the terminal.
-                        The dependencies used in this app include Terminal.Gui & Spectre.Console.
-                        </p>
-                    </div>
-                    <hr class='hr-line' />
-                </div>
+            <div class="input-line">
             </div>
         </div>
-        <div class="social-media">
-            <h4>Contact me</h4>
-            <a href="https://github.com/teymuri-alireza" title="GitHub" target="_blank">
-                <img src="./img/github-mark-white.svg" alt="GitHub" />
-            </a>
-            <a href="https://t.me/teymuri_alireza" title="Telegram" target="_blank">
-                <img src="./img/icons8-telegram-50.png" alt="Telegram" />
-            </a>
-            <a href="https://x.com/teymuri_dev" title="X" target="_blank">
-                <img src="./img/icons8-x-50.png" alt="X" />
-            </a>
-            <a href="mailto:teymuri.alireza98@gmail.com" title="E-Mail">
-                <img src="./img/icons8-email-50.png" alt="E-Mail" />
-            </a>
-        </div>
-    </main>
-    <footer style="padding-bottom: 100px;"></footer>
+        <span class="prompt">> </span>
+        <input id="cmd" autofocus value="help"/>
+    </div>
 </body>
 <script src="./static/app.js"></script>
 </html>
