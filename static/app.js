@@ -8,7 +8,7 @@ document.addEventListener("click", () => {
 
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-        const value = input.value.trim();
+        const value = input.value.trim().toLowerCase();
         printLine(prompt + value);
 
         handleCommand(value);
