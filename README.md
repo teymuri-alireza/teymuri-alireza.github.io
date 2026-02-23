@@ -16,6 +16,6 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
 ## future updates
 
-- add help message for commands
-- add more commands (e.g. `echo`, `cd`, `date`)
-- add command history with arrow-key navigation
+- [ ] add more commands (e.g. `echo`, `cd`, `date`)
+- [ ] add command history with arrow-key navigation
+- [x] ~~add help message for commands~~
