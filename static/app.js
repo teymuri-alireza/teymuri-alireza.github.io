@@ -1,8 +1,9 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
-version.textContent = "0.1.0";
+version.textContent = "0.2.0";
 let prompt = "> ";
+let path = "/home/you";
 
 document.addEventListener("click", () => {
     document.getElementById("cmd").focus();
@@ -36,7 +37,7 @@ const commands = {
 
     help(args) {
         if (!args[0]) {
-            printLine("Available commands: help, sudo, ls, whoami, pwd, man, echo, date, clear");
+            printLine("Available commands: help, sudo, ls, whoami, pwd, cd, man, echo, date, clear");
             printLine("You can also use `<command> -h` to see the help message.");
         }
         else {
@@ -159,15 +160,42 @@ const commands = {
 
     pwd(args) {
         if (!args[0]) {
-            printLine("/home/you")
+            printLine(path)
         }
         else {
             switch (args[0]) {
                 case "-h":
-                    printLine("Print the name of the current working directory.")
+                    printLine("Prints the name of the current working directory.")
                     printLine("Usage: pwd")
                     break;
                 default:
+                    break;
+            }
+        }
+    },
+
+    cd(args) {
+        if (!args[0]) {
+            // the ~ path
+            path = "/home/you"
+        }
+        else {
+            switch (args[0]) {
+                case "-h":
+                    printLine("Changes the working directory");
+                    printLine("Usage: cd <new path>");
+                    break;
+                    case "..":
+                    // changes the current working directory to its parent directory
+                    if (path == "/home/you") {
+                        path = "/home";
+                    }
+                    else if (path == "/home") {
+                        path = "/";
+                    }
+                    break;
+                default:
+                    path = args[0];
                     break;
             }
         }
