@@ -11,6 +11,7 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 - ls
 - whoami
 - pwd
+- cd
 - man
 - echo
 - date
@@ -18,8 +19,13 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
 ## future updates
 
-- [ ] add `cd` command and create file system
 - [ ] add `projects` command
 - [ ] add command history with arrow-key navigation
-- [x] add more commands (e.g. `echo`, `date`)
+- [x] ~~add `cd` command and create file system~~
+- [x] ~~add more commands (e.g. `echo`, `date`)~~
 - [x] ~~add help message for commands~~
+
+## things to fix
+
+- remove trailing backspace `/` for `cd` command
+- change `ls` command to accept directory as argument
