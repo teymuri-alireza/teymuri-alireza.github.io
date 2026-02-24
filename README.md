@@ -12,10 +12,14 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 - whoami
 - pwd
 - man
+- echo
+- date
 - clear
 
 ## future updates
 
-- [ ] add more commands (e.g. `echo`, `cd`, `date`)
+- [ ] add `cd` command and create file system
+- [ ] add `projects` command
 - [ ] add command history with arrow-key navigation
+- [x] add more commands (e.g. `echo`, `date`)
 - [x] ~~add help message for commands~~
