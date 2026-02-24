@@ -36,7 +36,7 @@ const commands = {
 
     help(args) {
         if (!args[0]) {
-            printLine("Available commands: help, sudo, ls, whoami, pwd, man, echo, clear");
+            printLine("Available commands: help, sudo, ls, whoami, pwd, man, echo, date, clear");
             printLine("You can also use `<command> -h` to see the help message.");
         }
         else {
@@ -159,6 +159,25 @@ const commands = {
                     text += args[i] + " ";
                 }
                 printLine(text.trim());
+            }
+        }
+    },
+
+    date(args) {
+        if (!args[0]) {
+            var JS_date = new Date().toString();
+            var part_1 = JS_date.slice(0,25);
+            var part_2 = JS_date.slice(28,33);
+            printLine(part_1 + part_2)
+        }
+        else {
+            switch (args[0]) {
+                case "-h":
+                    printLine("Print the date and time.");
+                    printLine("Usage: date");
+                    break;
+                default:
+                    break;
             }
         }
     },
