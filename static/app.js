@@ -1,7 +1,7 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
-version.textContent = "0.0.1";
+version.textContent = "0.1.0";
 let prompt = "> ";
 
 document.addEventListener("click", () => {
@@ -36,7 +36,7 @@ const commands = {
 
     help(args) {
         if (!args[0]) {
-            printLine("Available commands: help, sudo, ls, whoami, pwd, man, clear");
+            printLine("Available commands: help, sudo, ls, whoami, pwd, man, echo, clear");
             printLine("You can also use `<command> -h` to see the help message.");
         }
         else {
@@ -139,6 +139,26 @@ const commands = {
                 default:
                     printLine("No man pages. Figure it out like a real hacker :)");
                     break;
+            }
+        }
+    },
+
+    echo(args) {
+        // Use a different condition so text with leading spaces is still printed
+        if (args.length === 0) {
+            printLine("\u00A0");
+        }
+        else {
+            if (args[0] == "-h") {
+                printLine("Display a line of text");
+                printLine("Usage: echo <text>");
+            }
+            else {
+                var text = ""
+                for (let i = 0; i < args.length; i++) {
+                    text += args[i] + " ";
+                }
+                printLine(text.trim());
             }
         }
     },
