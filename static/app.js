@@ -1,5 +1,7 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
+const version = document.getElementById("version");
+version.textContent = "0.0.1";
 let prompt = "> ";
 
 document.addEventListener("click", () => {
