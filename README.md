@@ -29,6 +29,4 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
 ## Things To Fix
 
-- remove trailing backspace `/` for `cd` command
-- adjust the `ls` command to accept a directory as an argument
-- add auto scroll to the end of page
+<p style="color:gray;">Nothing for now</p>
