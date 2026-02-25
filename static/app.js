@@ -150,7 +150,7 @@ const commands = {
         else {
             switch (args[0]) {
                 case "-h":
-                    printLine("Prints the name of the current working directory.")
+                    printLine("Prints the current working directory.")
                     printLine("Usage: pwd")
                     break;
                 default:
@@ -204,7 +204,7 @@ const commands = {
         else {
             switch (args[0]) {
                 case "-h":
-                    printLine("Print about me.")
+                    printLine("Print a description about me.")
                     printLine("Usage: whoami")
                     break;
                 default:
