@@ -1,7 +1,7 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
-version.textContent = "0.2.1";
+version.textContent = "0.2.2";
 let prompt = "> ";
 let path = "/home/you";
 
@@ -175,12 +175,21 @@ const commands = {
     },
 
     cd(args) {
-        if (!args[0]) {
+        let argument = args[0];
+        // condition explanation:
+        // 1. if argument has value
+        // 2. if argument's value ends with "/"
+        // 3. if argument's value is not the root directpry: "/"
+        // this condition removes trailing backslashes
+        if (argument && argument.endsWith("/") && argument.length > 1) {
+            argument = argument.slice(0, argument.length - 1);
+        }
+        if (!argument) {
             // the ~ path
             path = "/home/you"
         }
         else {
-            switch (args[0]) {
+            switch (argument) {
                 case "-h":
                     printLine("Changes the working directory");
                     printLine("Usage: cd <new path>");
@@ -195,7 +204,7 @@ const commands = {
                     }
                     break;
                 default:
-                    path = args[0];
+                    path = argument;
                     break;
             }
         }
