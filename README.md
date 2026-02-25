@@ -1,10 +1,10 @@
 # Alireza Teymuri
 
-I've created a interactive terminal interface with javascript for this repo.
+Just an interactive terminal interface in javascript.
 
 check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
-## supported commands
+## Supported Commands
 
 - help
 - sudo
@@ -16,16 +16,19 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 - echo
 - date
 - clear
+- ...
 
-## future updates
+## Future Updates
 
 - [ ] add `projects` command
 - [ ] add command history with arrow-key navigation
+- [ ] add current working directory to the prompt
 - [x] ~~add `cd` command and create file system~~
 - [x] ~~add more commands (e.g. `echo`, `date`)~~
 - [x] ~~add help message for commands~~
 
-## things to fix
+## Things To Fix
 
 - remove trailing backspace `/` for `cd` command
-- change `ls` command to accept directory as argument
+- adjust the `ls` command to accept a directory as an argument
+- add auto scroll to the end of page
