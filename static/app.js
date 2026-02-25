@@ -1,7 +1,7 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
-version.textContent = "0.2.0";
+version.textContent = "0.2.1";
 let prompt = "> ";
 let path = "/home/you";
 
@@ -294,8 +294,17 @@ const commands = {
 
 };
 
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "instant"
+    });
+}
+
 function printLine(text) {
     const div = document.createElement("div");
     div.textContent = text;
     output.appendChild(div);
+
+    scrollToBottom();
 }
