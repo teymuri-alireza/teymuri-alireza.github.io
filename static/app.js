@@ -203,6 +203,12 @@ const commands = {
                     path = "/home/you";
                     updatePrompt();
                     break;
+                case "you":
+                    if (path == "/home") {
+                        path = "/home/you";
+                        updatePrompt();
+                    }
+                    break;
                 default:
                     printLine(argument + ": directory is not defined.")
                     // updatePrompt();
