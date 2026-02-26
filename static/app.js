@@ -1,11 +1,14 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
+const prompt = document.getElementById("prompt");
+const sudo_sign = document.getElementById("sudo-sign");
 // The version changes after every branch merge
-version.textContent = "0.3.0";
-let prompt = "> ";
+version.textContent = "0.4.0";
+prompt.textContent = "~";
+sudo_sign.textContent = "$";
 let path = "/home/you";
-
+updatePrompt();
 document.addEventListener("click", () => {
     document.getElementById("cmd").focus();
 });
@@ -13,8 +16,8 @@ document.addEventListener("click", () => {
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         const value = input.value.trim().toLowerCase();
-        printLine(prompt + value);
-
+        printLine(prompt.textContent + sudo_sign.textContent + " " + value);
+        
         handleCommand(value);
         input.value = "";
     }
@@ -171,7 +174,8 @@ const commands = {
         }
         if (!argument) {
             // the ~ path
-            path = "/home/you"
+            path = "/home/you";
+            updatePrompt();
         }
         else {
             switch (argument) {
@@ -179,7 +183,7 @@ const commands = {
                     printLine("Changes the working directory");
                     printLine("Usage: cd <new path>");
                     break;
-                    case "..":
+                case "..":
                     // changes the current working directory to its parent directory
                     if (path == "/home/you") {
                         path = "/home";
@@ -187,9 +191,21 @@ const commands = {
                     else if (path == "/home") {
                         path = "/";
                     }
+                    updatePrompt();
+                    break;
+                case "/":
+                case "/home":
+                case "/home/you":
+                    path = argument;
+                    updatePrompt();
+                    break;
+                case "~":
+                    path = "/home/you";
+                    updatePrompt();
                     break;
                 default:
-                    path = argument;
+                    printLine(argument + ": directory is not defined.")
+                    // updatePrompt();
                     break;
             }
         }
@@ -293,6 +309,13 @@ function scrollToBottom() {
         top: document.body.scrollHeight,
         behavior: "instant"
     });
+}
+
+function updatePrompt() {
+    const home = "/home/you";
+
+    const displayPath = path.startsWith(home) ? "~" + path.slice(home.length) : path;
+    prompt.textContent = displayPath;
 }
 
 function printLine(text) {
