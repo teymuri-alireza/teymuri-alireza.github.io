@@ -29,4 +29,5 @@ check it out: [teymuri-alireza.github.io](https://teymuri-alireza.github.io/)
 
 ## Things To Fix
 
-<p style="color:gray;">Nothing for now</p>
+<!-- Nothing for now -->
+- write error message `directory is not accessible` for the cd command
