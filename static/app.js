@@ -2,12 +2,9 @@ const output = document.getElementById("output");
 const input = document.getElementById("cmd");
 const version = document.getElementById("version");
 const prompt = document.getElementById("prompt");
-const sudo_sign = document.getElementById("sudo-sign");
 // The version changes after every branch merge
-version.textContent = "0.4.0";
-prompt.textContent = "~";
-sudo_sign.textContent = "$";
-let path = "/home/you";
+version.textContent = "0.5.0";
+let path = "/home/guest";
 updatePrompt();
 document.addEventListener("click", () => {
     document.getElementById("cmd").focus();
@@ -16,7 +13,7 @@ document.addEventListener("click", () => {
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         const value = input.value.trim().toLowerCase();
-        printLine(prompt.textContent + sudo_sign.textContent + " " + value);
+        printLine(prompt.textContent + " " + value);
         
         handleCommand(value);
         input.value = "";
@@ -80,13 +77,13 @@ const commands = {
         if (args.includes("/")) {
             path = "";
         }
-        if (args.includes("/home/you") || path == "/home/you") {
+        if (args.includes("/home/guest") || path == "/home/guest") {
             if (args.includes("-l")) {
                 printLine("total 16")
-                printLine("-rw-rw-r-- 1 you you   685  Feb 22 22:52 index.html")
-                printLine("-rw-rw-r-- 1 you you   346  Feb 22 17:51 style.css")
-                printLine("-rw-rw-r-- 1 you you   253  Feb 23 17:52 app.js")
-                printLine("-rw-rw-r-- 1 you you   394  Feb 23 17:40 README.md")
+                printLine("-rw-rw-r-- 1 guest guest   685  Feb 22 22:52 index.html")
+                printLine("-rw-rw-r-- 1 guest guest   346  Feb 22 17:51 style.css")
+                printLine("-rw-rw-r-- 1 guest guest   253  Feb 23 17:52 app.js")
+                printLine("-rw-rw-r-- 1 guest guest   394  Feb 23 17:40 README.md")
             }
             else if (args.includes("-a")) {
                 printLine(". .. index.html style.css app.js README.md .git");
@@ -98,13 +95,13 @@ const commands = {
         else if (args.includes("/home") || path == "/home") {
             if (args.includes("-l")) {
                 printLine("total 4");
-                printLine("drwxr-x--- 72 you you  4096 Feb 24 16:33 you");
+                printLine("drwxr-x--- 72 guest guest  4096 Feb 24 16:33 guest");
             }
             else if (args.includes("-a")) {
-                printLine(". .. you");
+                printLine(". .. guest");
             }
             else {
-                printLine("you");    
+                printLine("guest");    
             }
         }
         else if (args.includes("/") || path == "/") {
@@ -174,7 +171,7 @@ const commands = {
         }
         if (!argument) {
             // the ~ path
-            path = "/home/you";
+            path = "/home/guest";
             updatePrompt();
         }
         else {
@@ -185,7 +182,7 @@ const commands = {
                     break;
                 case "..":
                     // changes the current working directory to its parent directory
-                    if (path == "/home/you") {
+                    if (path == "/home/guest") {
                         path = "/home";
                     }
                     else if (path == "/home") {
@@ -195,17 +192,17 @@ const commands = {
                     break;
                 case "/":
                 case "/home":
-                case "/home/you":
+                case "/home/guest":
                     path = argument;
                     updatePrompt();
                     break;
                 case "~":
-                    path = "/home/you";
+                    path = "/home/guest";
                     updatePrompt();
                     break;
-                case "you":
+                case "guest":
                     if (path == "/home") {
-                        path = "/home/you";
+                        path = "/home/guest";
                         updatePrompt();
                     }
                     break;
@@ -318,10 +315,14 @@ function scrollToBottom() {
 }
 
 function updatePrompt() {
-    const home = "/home/you";
-
+    const home = "/home/guest";
+    const username = "guest";
+    const hostname = "portfolio";
     const displayPath = path.startsWith(home) ? "~" + path.slice(home.length) : path;
-    prompt.textContent = displayPath;
+    const sudo_sign = "$";
+
+    prompt.textContent = 
+    `${username}@${hostname}:${displayPath}${sudo_sign}`;
 }
 
 function printLine(text) {
