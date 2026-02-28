@@ -30,4 +30,3 @@ help · sudo · ls · whoami · pwd · cd · man · echo · date · clear · ...
 
 <!-- Nothing for now -->
 - Gracfully handle "directory not defined" error and the `..` argument in the `ls` command
-- Change coloring for each section such as error, path and input
