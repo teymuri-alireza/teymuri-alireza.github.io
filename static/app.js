@@ -13,7 +13,7 @@ document.addEventListener("click", () => {
 input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         const value = input.value.trim().toLowerCase();
-        printLine(prompt.textContent + " " + value);
+        printLine(prompt.textContent + " " + value, "#00ff9c");
         
         handleCommand(value);
         input.value = "";
@@ -29,7 +29,7 @@ function handleCommand(text)
     }
     else {
         if (text.split(" ") != "") {
-            printLine(text + ": command not found");
+            printLine(text + ": command not found", "#ff5656dc");
         }
     }
 }
@@ -71,6 +71,8 @@ const commands = {
             printLine("List directory contents.");
             printLine("Usage: ls [path] [options]")
             printLine("Options: [-h][-l][-a]")
+            printLine(`The default output color is white and the errors will be displayed in red.
+                The accessable directories with -l option, will be blue.`)
             return;
         }
         let tmp_path = path;
@@ -95,13 +97,13 @@ const commands = {
         else if (args.includes("/home") || path == "/home") {
             if (args.includes("-l")) {
                 printLine("total 4");
-                printLine("drwxr-x--- 72 guest guest  4096 Feb 24 16:33 guest");
+                printLine("drwxr-x--- 72 guest guest  4096 Feb 24 16:33 guest", "#267dff");
             }
             else if (args.includes("-a")) {
                 printLine(". .. guest");
             }
             else {
-                printLine("guest");    
+                printLine("guest");
             }
         }
         else if (args.includes("/") || path == "/") {
@@ -112,7 +114,7 @@ const commands = {
                 printLine("dr-xr-xr-x   2 root root       4096 Aug 15 -2025 cdrom");
                 printLine("drwxr-xr-x   1 root root       5740 Feb 24 09:06 dev");
                 printLine("drwxr-xr-x   1 root root       1228 Feb 22 11:18 etc");
-                printLine("drwxr-xr-x   6 root root       4096 Sep 17 09:59 home");
+                printLine("drwxr-xr-x   6 root root       4096 Sep 17 09:59 home", "#267dff");
                 printLine("lrwxrwxrwx   1 root root       6527 Apr 22 -2024 lib -> usr/lib");
                 printLine("lrwxrwxrwx   1 root root       8539 Apr 22 -2024 lib64 -> usr/lib64");
                 printLine("drwx------   2 root root       1384 Nov 13 20:46 lost+found");
@@ -207,7 +209,7 @@ const commands = {
                     }
                     break;
                 default:
-                    printLine(argument + ": directory is not defined.")
+                    printLine(argument + ": directory is not defined.", "#ff5656dc")
                     // updatePrompt();
                     break;
             }
@@ -325,9 +327,10 @@ function updatePrompt() {
     `${username}@${hostname}:${displayPath}${sudo_sign}`;
 }
 
-function printLine(text) {
+function printLine(text, color="#e6e6e6") {
     const div = document.createElement("div");
     div.textContent = text;
+    div.style.color = color;
     output.appendChild(div);
 
     scrollToBottom();
