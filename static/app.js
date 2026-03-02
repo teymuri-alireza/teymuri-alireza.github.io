@@ -69,17 +69,30 @@ const commands = {
         // the -h option is used only once, and not in other switch statements
         if (args[0] == "-h") {
             printLine("List directory contents.");
-            printLine("Usage: ls [path] [options]")
+            printLine("Usage: ls [option] [path]")
             printLine("Options: [-h][-l][-a]")
             printLine(`The default output color is white and the errors will be displayed in red.
                 The accessable directories with -l option, will be blue.`)
             return;
         }
+        // remove trailing backslashes
+        if (args[0] && args[0].endsWith("/") && args[0].length > 1) {
+            args[0] = args[0].slice(0, args[0].length - 1);
+        }
         let tmp_path = path;
         if (args.includes("/")) {
             path = "";
         }
-        if (args.includes("/home/guest") || path == "/home/guest") {
+        if (args.includes("..")) {
+            if (path == "/home/guest") {
+                printLine("guest");
+            }
+            else if (path == "/home") {
+                printLine("bin boot dev home lib media opt root sbin snap swap.img");
+                printLine("tmp var cdrom etc lib64 lost+found mnt proc run srv sys usr");
+            }
+        }
+        else if (args.includes("/home/guest") || path == "/home/guest") {
             if (args.includes("-l")) {
                 printLine("total 16")
                 printLine("-rw-rw-r-- 1 guest guest   685  Feb 22 22:52 index.html")
@@ -89,6 +102,15 @@ const commands = {
             }
             else if (args.includes("-a")) {
                 printLine(". .. index.html style.css app.js README.md .git");
+            }
+            else if (args[0] == "/home") {
+                printLine("guest");
+            }
+            else if (args[0] == "/home/guest") {
+                printLine("index.html style.css app.js README.md");
+            }
+            else if (args[0]) {
+                printLine(args[0] + ": directory is not defined.", "#ff5656dc")
             }
             else {
                 printLine("index.html style.css app.js README.md");
@@ -101,6 +123,15 @@ const commands = {
             }
             else if (args.includes("-a")) {
                 printLine(". .. guest");
+            }
+            else if (args[0] == "guest") {
+                printLine("index.html style.css app.js README.md");
+            }
+            else if (args[0] == "/home") {
+                printLine("guest");
+            }
+            else if (args[0]) {
+                printLine(args[0] + ": directory is not defined.", "#ff5656dc")
             }
             else {
                 printLine("guest");
@@ -136,6 +167,15 @@ const commands = {
             else if (args.includes("-a")) {
                 printLine(". .. bin boot dev home lib media opt root sbin snap swap.img");
                 printLine("tmp var cdrom etc lib64 lost+found mnt proc run srv sys usr");
+            }
+            else if (args[0] == "home") {
+                printLine("guest");
+            }
+            else if (args[0] == "home/guest") {
+                printLine("index.html style.css app.js README.md");
+            }
+            else if (args[0]) {
+                printLine(args[0] + ": directory is not defined.", "#ff5656dc")
             }
             else {
                 printLine("bin boot dev home lib media opt root sbin snap swap.img");
@@ -207,11 +247,26 @@ const commands = {
                         path = "/home/guest";
                         updatePrompt();
                     }
+                    else {
+                        printLine(argument + ": directory is not defined.", "#ff5656dc")
+                    }
                     break;
                 case "home":
                     if (path == "/") {
                         path = "/home";
                         updatePrompt();
+                    }
+                    else {
+                        printLine(argument + ": directory is not defined.", "#ff5656dc")
+                    }
+                    break;
+                case "home/guest":
+                    if (path == "/") {
+                        path = "/home/guest";
+                        updatePrompt();
+                    }
+                    else {
+                        printLine(argument + ": directory is not defined.", "#ff5656dc")
                     }
                     break;
                 default:
