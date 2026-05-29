@@ -1,9 +1,6 @@
 const output = document.getElementById("output");
 const input = document.getElementById("cmd");
-const version = document.getElementById("version");
 const prompt = document.getElementById("prompt");
-// The version changes after every branch merge
-version.textContent = "0.5.0";
 let path = "/home/guest";
 updatePrompt();
 document.addEventListener("click", () => {
