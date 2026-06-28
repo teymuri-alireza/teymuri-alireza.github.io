@@ -171,6 +171,23 @@ section h2{
     color: #8b949e;
 }
 
+/* Stack Badges */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.tech {
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: rgba(100, 181, 255, 0.15);
+    color: #64b5ff;
+    border: 1px solid rgba(100, 181, 255, 0.3);
+}
+
 /* About */
 #about p,
 #blog p{
