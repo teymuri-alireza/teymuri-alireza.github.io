@@ -167,7 +167,7 @@ section h2{
     text-decoration:none;
 }
 
-.card span{
+.card .in_development{
     color: #8b949e;
 }
 
