@@ -1,0 +1,274 @@
+::selection{
+    background: #64b5ff;
+    color: #161b22;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64b5ff; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2b74ff; 
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#0d1117;
+    color:#f4f4f4;
+    overflow-x:hidden;
+    cursor: url("../img/icons8-select-cursor-24.png") 0 0, auto;
+}
+
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#1f3b5b55,transparent 40%),
+    radial-gradient(circle at bottom right,#3c1e7055,transparent 40%);
+    z-index:-2;
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(900px,90%);
+    padding:15px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:18px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.2rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#64b5ff;
+}
+
+/* Hero */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero span{
+    color:#64b5ff;
+}
+
+.hero p{
+    color:#bcbcbc;
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+button{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+    background:#2b74ff;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:#4388ff;
+}
+
+/* Sections */
+section{
+    padding:120px 10%;
+}
+
+section h2{
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#161b22;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#2b74ff;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:20px;
+    color:#64b5ff;
+    text-decoration:none;
+}
+
+.card span{
+    color: #8b949e;
+}
+
+/* About */
+#about p,
+#blog p{
+    max-width:800px;
+    line-height:1.8;
+    color:#cfcfcf;
+}
+
+/* Latest Articles */
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.blog-card{
+    background:#161b22;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:24px;
+    transition:.3s;
+}
+
+.blog-card:hover{
+    transform:translateY(-8px);
+    border-color:#64b5ff;
+}
+
+.blog-date{
+    color:#8b949e;
+    font-size:.9rem;
+}
+
+.blog-card h3{
+    margin:15px 0;
+}
+
+.blog-card p{
+    color:#c9d1d9;
+    line-height:1.6;
+}
+
+.blog-card a{
+    display:inline-block;
+    margin-top:20px;
+    color:#64b5ff;
+    text-decoration:none;
+}
+
+.blog-footer{
+    margin-top:50px;
+    text-align:center;
+}
+
+.medium-btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:50px;
+    background:#64b5ff;
+    color:#fff;
+    text-decoration:none;
+}
+
+/* Footer */
+
+footer{
+    padding:40px;
+    text-align:center;
+    color:#888;
+}
+
+footer a{
+    color: transparent;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+footer img{
+    width: 50px;
+}
+
+/* Responsive */
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.7rem;
+    }
+
+}
