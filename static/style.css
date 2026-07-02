@@ -238,6 +238,18 @@ section h2{
     text-decoration:none;
 }
 
+.blog-meta {
+    margin: 10px 0;
+}
+
+.lang-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: #c9d1d9;
+}
+
 .blog-footer{
     margin-top:50px;
     text-align:center;
