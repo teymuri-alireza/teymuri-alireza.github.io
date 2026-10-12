@@ -2,196 +2,169 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alireza Teymuri's portfolio: backend development, software projects, Linux, and cybersecurity.">
+    <meta name="theme-color" content="#0d1117">
     <title>Alireza Teymuri | Portfolio</title>
 
     <link rel="stylesheet" href="./static/style.css">
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/icons8-curly-brackets-16.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/icons8-curly-brackets-16.png" type="image/png">
 </head>
 <body>
+    <nav id="navbar" aria-label="Main navigation">
+        <a class="logo" href="#home" aria-label="Alireza Teymuri — home">Alireza Teymuri</a>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#timeline">Journey</a></li>
+        </ul>
+    </nav>
 
-<nav id="navbar">
-    <div class="logo">Alireza Teymuri</div>
-
-    <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#blog">Blog</a></li>
-    </ul>
-</nav>
-
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h1>Hello, I'm <span>Alireza Teymuri</span></h1>
-        <p>
-            Computer Engineering Student • Backend Developer •
-            AI & Cybersecurity Enthusiast
-        </p>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>woninet</h3>
-            <br />
-            <p>
-                Local network monitoring system for host detection and reachability.
-                Automates subnet enumeration, tracks metrics, and triggers alerts via
-                a dedicated alert engine.
-            </p>
-            <div class="tech-stack">
-                <span class="tech">Python</span>
-                <span class="tech">FastAPI</span>
-                <span class="tech">SQLAlchemy</span>
+    <main id="main-content">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Alireza Teymuri</span>.</h1>
+                <p class="hero-summary">Computer engineering student focused on backend development, Linux, and cybersecurity.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">Explore my projects</a>
+                    <a class="button button-secondary" href="https://github.com/teymuri-alireza" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+                </div>
             </div>
-            <a href="https://github.com/teymuri-alireza/woninet" target="_blank" rel="noopener noreferrer">
-                Repository on GitHub →
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-heading">
+                <p class="eyebrow">Selected work</p>
+                <h2>Projects</h2>
+                <p>A selection of projects I've built while learning and applying software engineering concepts.</p>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="card-heading">
+                        <h3>TypeHard</h3>
+                        <span class="project-status">In development</span>
+                    </div>
+                    <p>A desktop touch-typing application built with TypeScript and Tauri, featuring structured lessons to help users improve their typing skills.</p>
+                    <div class="tech-stack" aria-label="Technologies used">
+                        <span class="tech">TypeScript</span>
+                        <span class="tech">Tauri</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/teymuri-alireza/typehard" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
+                </article>
+
+                <article class="card">
+                    <div class="card-heading">
+                        <h3>Woninet</h3>
+                    </div>
+                    <p>A local network monitoring tool that discovers hosts, checks their reachability, tracks network metrics, and triggers alerts through a dedicated alert engine.</p>
+                    <div class="tech-stack" aria-label="Technologies used">
+                        <span class="tech">Python</span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">SQLAlchemy</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/teymuri-alireza/woninet" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
+                </article>
+
+                <article class="card">
+                    <div class="card-heading">
+                        <h3>Help Desk System</h3>
+                        <span class="project-status project-status-muted">Archived</span>
+                    </div>
+                    <p>An academic project covering requirements analysis, UML modeling, database schema design, and full-stack implementation of a help desk system.</p>
+                    <div class="tech-stack" aria-label="Technologies used">
+                        <span class="tech">Python</span>
+                        <span class="tech">FastAPI</span>
+                        <span class="tech">SQLAlchemy</span>
+                    </div>
+                    <a class="project-link" href="https://github.com/teymuri-alireza/help-desk-system" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span></a>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="section-heading">
+                <p class="eyebrow">A little about me</p>
+                <h2>About</h2>
+                <p>I'm a computer engineering student who enjoys building software, understanding how systems work, and learning through hands-on projects. I'm currently developing my backend skills with Python and Django while exploring cybersecurity through practical exercises and CTF challenges.</p>
+                <p>My interests include backend engineering, secure software design, Linux internals, and ethical hacking.</p>
+            </div>
+        </section>
+
+        <section id="timeline" class="section journey-section">
+            <div class="section-heading">
+                <p class="eyebrow">How I've been learning</p>
+                <h2>My Journey</h2>
+            </div>
+            <ol class="timeline">
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Personal Projects</span>
+                            <span class="time-wrapper"><time class="time" datetime="2026-03">Mar 2026 - Present</time></span>
+                        </div>
+                        <div class="desc">
+                            Building <strong>woninet</strong>, a local network monitoring tool, and <strong>TypeHard</strong>, a desktop touch-typing app. Designing an academic help desk system project.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Technical Learning &amp; Challenges</span>
+                            <span class="time-wrapper"><time class="time" datetime="2025-06">Jun 2025 - Feb 2026</time></span>
+                        </div>
+                        <div class="desc">
+                            Took part in Sharif ICT challenges, used Ubuntu as my primary desktop environment, and studied networking with Network+ materials.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Projects &amp; Self-Study</span>
+                            <span class="time-wrapper"><time class="time" datetime="2024-09">Sep 2024 - May 2025</time></span>
+                        </div>
+                        <div class="desc">
+                            Learned Python through personal projects, used Git for version control, studied SQL databases, and began exploring cybersecurity techniques.
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Computer Engineering</span>
+                            <span class="time-wrapper"><time class="time" datetime="2024-08">Aug 2024 - Present</time></span>
+                        </div>
+                        <div class="desc">Bachelor in Computer Engineering at Azad University, Tehran, Iran.</div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="social-links" aria-label="Contact and social links">
+            <a href="https://github.com/teymuri-alireza" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <img src="./img/github-mark-white.svg" alt="" width="40" height="40">
+            </a>
+            <a href="mailto:teymuri.alireza98@gmail.com" aria-label="Email" title="Email">
+                <img src="./img/icons8-email-50.png" alt="" width="40" height="40">
+            </a>
+            <a href="https://t.me/DevJournals" aria-label="Telegram channel (Persian)" title="Telegram channel (in Persian)" target="_blank" rel="noopener noreferrer">
+                <img src="./img/icons8-telegram-50.png" alt="" width="40" height="40">
+            </a>
+            <a href="https://www.linkedin.com/in/alireza-teymuri-b76406443/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="./img/icons8-linkedin-64.png" alt="" width="40" height="40">
             </a>
         </div>
+        <p class="credits">Icons by <a href="https://icons8.com/" target="_blank" rel="noopener noreferrer">Icons8</a>. Timeline concept by <a href="https://codepen.io/NilsWe/pen/Axdozd" target="_blank" rel="noopener noreferrer">NilsWe on CodePen</a>.</p>
+    </footer>
 
-        <div class="card">
-            <h3>Help Desk System</h3>
-            <br />
-            <p>
-                A Help Desk system design project covering requirement analysis,
-                UML modeling, database schema design, and full-stack implementation.
-            </p>
-            <div class="tech-stack">
-                <span class="tech">Python</span>
-                <span class="tech">FastAPI</span>
-                <span class="tech">SQLAlchemy</span>
-            </div>
-            <br />
-            <span class="in_development">[In Development] [Private Repository]</span>
-        </div>
-
-    </div>
-</section>
-
-<section id="about">
-    <h2>About Me</h2>
-
-    <p>
-        I'm a Computer Engineering student with a strong interest in backend development and
-        system design. I'm currently expanding my expertise in Python, FastAPI, and Databases while
-        building practical applications. I use Git for version control and Linux as my primary
-        development environment. Beyond backend engineering, I'm also interested in machine
-        learning, artificial intelligence, and cybersecurity, and I enjoy exploring new technologies
-        through hands-on projects.
-    </p>
-
-</section>
-
-<section id="blog">
-    <h2>Latest Articles</h2>
-
-    <p class="section-description">
-        I enjoy documenting my learning journey, sharing technical tutorials,
-        and software engineering insights.
-    </p>
-
-    <div class="blog-grid">
-
-        <article class="blog-card">
-            <span class="blog-date">Jul 06, 2026</span>
-            <div class="blog-meta">
-                <span class="lang-badge">Language: Persian</span>
-            </div>
-            <h3>Context Managers in Python</h3>
-            <a href="https://telegra.ph/Context-Managers-in-Python-07-06"
-                target="_blank"
-                rel="noopener noreferrer">
-                Read on Telegra.ph →
-            </a>
-        </article>
-
-        <article class="blog-card">
-            <span class="blog-date">Jul 03, 2026</span>
-            <div class="blog-meta">
-                <span class="lang-badge">Language: Persian</span>
-            </div>
-            <h3>Automating Macchanger Service Using systemd</h3>
-            <a href="https://telegra.ph/Automating-Macchanger-Service-Using-systemd-07-03"
-                target="_blank"
-                rel="noopener noreferrer">
-                Read on Telegra.ph →
-            </a>
-        </article>
-
-        <article class="blog-card">
-            <span class="blog-date">Jul 02, 2026</span>
-            <div class="blog-meta">
-                <span class="lang-badge">Language: Persian</span>
-            </div>
-            <h3>Debugging Budgie Desktop</h3>
-            <a href="https://telegra.ph/Debugging-Budgie-Desktop-07-02"
-                target="_blank"
-                rel="noopener noreferrer">
-                Read on Telegra.ph →
-            </a>
-        </article>
-
-        <article class="blog-card">
-            <span class="blog-date">Jun 28, 2026</span>
-            <div class="blog-meta">
-                <span class="lang-badge">Language: English</span>
-            </div>
-            <h3>Git Mastery #3 — Undoing Mistakes in Git</h3>
-            <a href="https://medium.com/@teymuri_dev/git-mastery-3-undoing-mistakes-in-git-7dbf4051f733"
-                target="_blank"
-                rel="noopener noreferrer">
-                Read on Medium →
-            </a>
-        </article>
-
-        <article class="blog-card">
-            <span class="blog-date">June 12, 2026</span>
-            <div class="blog-meta">
-                <span class="lang-badge">Language: English</span>
-            </div>
-            <h3>Git Mastery #2 — Understanding Git History with git log</h3>
-            <a href="https://medium.com/@teymuri_dev/git-mastery-2-understanding-git-history-with-git-log-06827c3f1d6e"
-                target="_blank"
-                rel="noopener noreferrer">
-                Read on Medium →
-            </a>
-        </article>
-
-    </div>
-
-    <div class="blog-footer">
-        <a class="medium-btn"
-            href="https://medium.com/@teymuri_dev"
-            target="_blank"
-            rel="noopener noreferrer">
-            View all articles on Medium
-        </a>
-    </div>
-</section>
-
-<footer>
-    <a href="https://github.com/teymuri-alireza" alt="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
-        <img src="./img/github-mark-white.svg" />
-    </a>
-    <a href="mailto:teymuri.alireza98@gmail.com" alt="E-Mail" title="E-Mail">
-        <img src="./img/icons8-email-50.png" />
-    </a>
-    <a href="https://t.me/DevJournals" alt="Telegram Channel (Language: Persian)" title="Telegram Channel (Language: Persian)">
-        <img src="./img/icons8-telegram-50.png" />
-    </a>
-</footer>
-
-<script src="./static/app.js"></script>
-
+    <script src="./static/app.js" defer></script>
 </body>
 </html>
